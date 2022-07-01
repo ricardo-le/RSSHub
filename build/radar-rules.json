@@ -2443,6 +2443,14 @@
         "source": "/user/:uid",
         "target": "/douyin/user/:uid"
       }
+    ],
+    "live": [
+      {
+        "title": "直播间开播",
+        "docs": "https://docs.rsshub.app/live.html#dou-yin-zhi-bo",
+        "source": "/:rid",
+        "target": "/douyin/live/:rid"
+      }
     ]
   },
   "dtcj.com": {
@@ -4426,6 +4434,18 @@
           "/gz/weatherAlarm/otherCity/"
         ],
         "target": "/gov/guangdong/tqyb/sncsyjxh"
+      }
+    ]
+  },
+  "xz.gov.cn": {
+    "_name": "徐州市人民政府",
+    "hrss": [
+      {
+        "title": "徐州市人力资源和社会保障局",
+        "docs": "https://docs.rsshub.app/government.html#xu-zhou-shi-ren-min-zheng-fu-xu-zhou-shi-ren-li-zi-yuan-he-she-hui-bao-zhang-ju",
+        "source": [
+          "/*"
+        ]
       }
     ]
   },
@@ -8389,6 +8409,23 @@
       }
     ]
   },
+  "nyaa.si": {
+    "_name": "nyaa",
+    ".": [
+      {
+        "title": "搜索结果",
+        "docs": "https://docs.rsshub.app/multimedia.html#nyaa-sou-suo-jie-guo",
+        "source": "/"
+      }
+    ],
+    "sukebei": [
+      {
+        "title": "sukebei 搜索结果",
+        "docs": "https://docs.rsshub.app/multimedia.html#nyaa-sukebei-sou-suo-jie-guo",
+        "source": "/"
+      }
+    ]
+  },
   "nytimes.com": {
     "_name": "纽约时报",
     ".": [
@@ -9195,6 +9232,20 @@
           "/"
         ],
         "target": "/ruc/hr/:category?"
+      }
+    ]
+  },
+  "samsung.com": {
+    "_name": "Samsung",
+    "research": [
+      {
+        "title": "Research Blog",
+        "docs": "https://docs.rsshub.app/new-media.html#samsung-research-blog",
+        "source": [
+          "/blog",
+          "/"
+        ],
+        "target": "/samsung/research/blog"
       }
     ]
   },
@@ -10793,6 +10844,21 @@
       }
     ]
   },
+  "u3c3.com": {
+    "_name": "u3c3",
+    ".": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/multimedia.html#u3c3-fen-lei",
+        "source": "/"
+      },
+      {
+        "title": "关键词搜索",
+        "docs": "https://docs.rsshub.app/multimedia.html#u3c3-guan-jian-ci-sou-suo",
+        "source": "/"
+      }
+    ]
+  },
   "uibe.edu.cn": {
     "_name": "对外经济贸易大学",
     "hr": [
@@ -11033,6 +11099,17 @@
           "/categories/:category/:subcategory",
           "/categories/:category/:subcategory/videos"
         ]
+      }
+    ]
+  },
+  "vlive.tv": {
+    "_name": "V LIVE",
+    ".": [
+      {
+        "title": "Board",
+        "docs": "https://docs.rsshub.app/en/live.html#v-live",
+        "source": "/channel/:board/board/:board",
+        "target": "/vlive/channel/:board/board/:board"
       }
     ]
   },
@@ -11582,6 +11659,15 @@
   },
   "xjtu.edu.cn": {
     "_name": "西安交通大学",
+    "2yuan": [
+      {
+        "title": "第二附属医院新闻",
+        "docs": "https://docs.rsshub.app/university.html#xi-an-jiao-tong-da-xue-di-er-fu-shu-yi-yuan-xin-wen",
+        "source": [
+          "/"
+        ]
+      }
+    ],
     "dean": [
       {
         "title": "教务处",
@@ -11685,6 +11771,14 @@
           "/u/:id"
         ],
         "target": "/xueqiu/user_stock/:id"
+      },
+      {
+        "title": "用户专栏",
+        "docs": "https://docs.rsshub.app/finance.html#xue-qiu",
+        "source": [
+          "/:id/column"
+        ],
+        "target": "/xueqiu/column/:id"
       },
       {
         "title": "组合最新调仓信息",
@@ -12025,6 +12119,19 @@
           "/news/world"
         ],
         "target": "/zaobao/znews/world"
+      }
+    ]
+  },
+  "zhangyoubao.com": {
+    "_name": "掌游宝",
+    "mobile": [
+      {
+        "title": "推荐",
+        "docs": "https://docs.rsshub.app/game.html#zhang-you-bao-tui-jian",
+        "source": [
+          "/:category/"
+        ],
+        "target": "/zhangyoubao/:category"
       }
     ]
   },
