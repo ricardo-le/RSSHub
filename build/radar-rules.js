@@ -338,10 +338,14 @@
           "/" ],
         target:"/8world/:category?" } ] },
   "91porn.com":{ _name:"91porn",
-    ".":[ { title:"91porn",
+    ".":[ { title:"今日排行",
         docs:"https://docs.rsshub.app/multimedia.html#_91porn",
         source:[ "/index.php" ],
-        target:"/91porn" } ] },
+        target:"/91porn" },
+      { title:"作者",
+        docs:"https://docs.rsshub.app/multimedia.html#_91porn",
+        source:[ "/uvideos.php" ],
+        target:(_params, url) => `/91porn/author/${new URL(url).searchParams.get('UID')}` } ] },
   "95mm.org":{ _name:"MM范",
     ".":[ { title:"分类",
         docs:"https://docs.rsshub.app/picture.html#mm-fan-fen-lei",
@@ -734,6 +738,20 @@
         docs:"https://docs.rsshub.app/bbs.html#yin-pin-ying-yong",
         source:[ "/all.php" ],
         target:"/audiobar/latest" } ] },
+  "baijingapp.com":{ _name:"白鲸出海",
+    ".":[ { title:"最新",
+        docs:"https://docs.rsshub.app/new-media.html#bai-jing-chu-hai",
+        source:[ "/article",
+          "/" ],
+        target:"/baijing" },
+      { title:"资讯",
+        docs:"https://docs.rsshub.app/new-media.html#bai-jing-chu-hai",
+        source:[ "/article",
+          "/" ],
+        target:(params, url) => {
+                    const matches = String(new URL(url)).match(/\/article\/type-(\d+)/);
+                    return `/baijing${matches ? `/${matches[1]}` : ''}`;
+                } } ] },
   "bandcamp.com":{ _name:"Bandcamp",
     ".":[ { title:"Tag",
         docs:"https://docs.rsshub.app/multimedia.html#bandcamp",
@@ -2579,6 +2597,47 @@
         docs:"https://docs.rsshub.app/government.html#bei-jing-shi-wei-sheng-jian-kang-wei-yuan-hui",
         source:"/xwzx_20031/:caty",
         target:"/gov/beijing/mhc/:caty" } ] },
+  "cmse.gov.cn":{ _name:"中国载人航天",
+    www:[ { title:"综合新闻",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/xwzx/zhxw" ],
+        target:"/gov/cmse/xwzx/zhxw" },
+      { title:"研制进展",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/xwzx/yzjz" ],
+        target:"/gov/cmse/xwzx/yzjz" },
+      { title:"官方公告",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/gfgg" ],
+        target:"/gov/cmse/gfgg" },
+      { title:"飞行任务",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/fxrw" ],
+        target:"/gov/cmse/fxrw" },
+      { title:"任务动态",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/fxrw/:id/:category" ],
+        target:"/gov/cmse/fxrw/:id/:category" },
+      { title:"空间科学",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/kjkx/:id" ],
+        target:"/gov/cmse/kjkx/:id" },
+      { title:"国际合作",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/gjhz" ],
+        target:"/gov/cmse/gjhz" },
+      { title:"环球视野",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/hqsy/:id" ],
+        target:"/gov/cmse/hqsy/:id" },
+      { title:"专题报道",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/ztbd/:id" ],
+        target:"/gov/cmse/ztbd/:id" },
+      { title:"科普教育",
+        docs:"https://docs.rsshub.app/government.html#zhong-guo-zai-ren-hang-tian",
+        source:[ "/kpjy/:id" ],
+        target:"/gov/cmse/kpjy/:id" } ] },
   "customs.gov.cn":{ _name:"中华人民共和国海关总署",
     www:[ { title:"拍卖信息 / 海关法规",
         docs:"https://docs.rsshub.app/government.html#zhong-hua-ren-min-gong-he-guo-hai-guan-zong-shu",
@@ -4272,6 +4331,36 @@
         docs:"https://docs.rsshub.app/bbs.html#learnku",
         source:[ "/:community" ],
         target:"/learnku/:community" } ] },
+  "leetcode.com":{ _name:"LeetCode",
+    ".":[ { title:"文章",
+        docs:"https://docs.rsshub.app/programming.html#leetcode",
+        source:[ "/articles" ],
+        target:"/leetcode/articles" },
+      { title:"打卡",
+        docs:"https://docs.rsshub.app/programming.html#leetcode",
+        source:[ "/:user" ],
+        target:(params) => {
+                    if (params.user !== 'articles') {
+                        return `/leetcode/submission/us/:user`;
+                    }
+                } },
+      { title:"每日一题",
+        docs:"https://docs.rsshub.app/programming.html#leetcode",
+        source:[ "/" ],
+        target:"/leetcode/dailyquestion/en" } ] },
+  "leetcode.cn":{ _name:"LeetCode",
+    ".":[ { title:"打卡",
+        docs:"https://docs.rsshub.app/programming.html#leetcode",
+        source:[ "/:user" ],
+        target:(params) => {
+                    if (params.user !== 'articles') {
+                        return `/leetcode/submission/cn/:user`;
+                    }
+                } },
+      { title:"每日一题",
+        docs:"https://docs.rsshub.app/programming.html#leetcode",
+        source:[ "/" ],
+        target:"/leetcode/dailyquestion/cn" } ] },
   "leiphone.com":{ _name:"雷峰网",
     ".":[ { title:"最新文章",
         docs:"https://docs.rsshub.app/new-media.html#lei-feng-wang-zui-xin-wen-zhang",
@@ -5787,6 +5876,11 @@
         source:[ "/curations",
           "/" ],
         target:"/pts/curations" },
+      { title:"整理報導",
+        docs:"https://docs.rsshub.app/traditional-media.html#gong-shi-xin-wen-wang-zheng-li-bao-dao",
+        source:[ "/live/:id",
+          "/" ],
+        target:"/pts/live/:id" },
       { title:"觀點",
         docs:"https://docs.rsshub.app/traditional-media.html#gong-shi-xin-wen-wang-guan-dian",
         source:[ "/opinion",
@@ -6253,6 +6347,12 @@
                     }
                     return `/sdu/sc/${type}`;
                 } } ] },
+  "seekingalpha.com":{ _name:"Seeking Alpha",
+    ".":[ { title:"Summary",
+        docs:"https://docs.rsshub.app/en/finance.html#seeking-alpha",
+        source:[ "/symbol/:symbol/:category",
+          "/symbol/:symbol/earnings/:category" ],
+        target:"/seekingalpha/:symbol/:category" } ] },
   "segmentfault.com":{ _name:"SegmentFault",
     ".":[ { title:"频道",
         docs:"https://docs.rsshub.app/programming.html#segmentfault",
@@ -7073,6 +7173,59 @@
         docs:"https://docs.rsshub.app/bbs.html#the-ring-of-wonder",
         source:[ "/" ],
         target:"/portal" } ] },
+  "twitter.com":{ _name:"Twitter",
+    ".":[ { title:"用户时间线",
+        docs:"https://docs.rsshub.app/social-media.html#twitter",
+        source:"/:id",
+        target:(params) => {
+                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
+                        return '/twitter/user/:id';
+                    }
+                } },
+      { title:"用户媒体时间线",
+        docs:"https://docs.rsshub.app/social-media.html#twitter",
+        source:"/:id/media",
+        target:(params) => {
+                    if (!['home', 'explore', 'notifications', 'messages', 'explore', 'search'].includes(params.id)) {
+                        return '/twitter/media/:id';
+                    }
+                } },
+      { title:"用户关注时间线",
+        docs:"https://docs.rsshub.app/social-media.html#twitter",
+        source:"/:id",
+        target:(params) => {
+                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
+                        return '/twitter/followings/:id';
+                    }
+                } },
+      { title:"用户喜欢列表",
+        docs:"https://docs.rsshub.app/social-media.html#twitter",
+        source:"/:id",
+        target:(params) => {
+                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
+                        return '/twitter/likes/:id';
+                    }
+                } },
+      { title:"列表时间线",
+        docs:"https://docs.rsshub.app/social-media.html#twitter",
+        source:"/:id/lists/:name",
+        target:(params) => {
+                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
+                        return '/twitter/list/:id/:name';
+                    }
+                } },
+      { title:"关键词",
+        docs:"https://docs.rsshub.app/social-media.html#twitter",
+        source:"/search",
+        target:(params, url) => `/twitter/keyword/${new URL(url).searchParams.get('q')}` },
+      { title:"推文收集",
+        docs:"https://docs.rsshub.app/social-media.html#twitter",
+        source:"/:uid/timelines/:collectionId",
+        target:(params) => {
+                    if (params.uid !== 'home' && params.uid !== 'explore' && params.uid !== 'notifications' && params.uid !== 'messages' && params.uid !== 'explore' && params.uid !== 'search') {
+                        return '/twitter/collection/:uid/:collectionId';
+                    }
+                } } ] },
   "twreporter.org":{ _name:"報導者",
     ".":[ { title:"最新",
         docs:"https://docs.rsshub.app/new-media.html#bao-dao-zhe",
@@ -7302,7 +7455,11 @@
         docs:"https://docs.rsshub.app/traditional-media.html#hua-er-jie-jian-wen-shi-shi-kuai-xun",
         source:[ "/live/:category",
           "/" ],
-        target:"/wallstreetcn/live/:category?" } ] },
+        target:"/wallstreetcn/live/:category?" },
+      { title:"最热文章",
+        docs:"https://docs.rsshub.app/traditional-media.html#hua-er-jie-jian-wen-zui-re-wen-zhang",
+        source:[ "/" ],
+        target:"/wallstreetcn/hot/:period?" } ] },
   "wangqiutiyu.com":{ _name:"旺球体育",
     ".":[ { title:"直播间开播",
         docs:"https://docs.rsshub.app/live.html#wang-qiu-ti-yu-zhi-bo-jian-kai-bo",
@@ -8039,43 +8196,6 @@
         docs:"https://docs.rsshub.app/social-media.html#pixiv",
         source:"/bookmark_new_illust.php",
         target:"/pixiv/user/illustfollows" } ] },
-  "twitter.com":{ _name:"Twitter",
-    ".":[ { title:"用户时间线",
-        docs:"https://docs.rsshub.app/social-media.html#twitter",
-        source:"/:id",
-        target:(params) => {
-                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
-                        return '/twitter/user/:id';
-                    }
-                } },
-      { title:"用户关注时间线",
-        docs:"https://docs.rsshub.app/social-media.html#twitter",
-        source:"/:id",
-        target:(params) => {
-                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
-                        return '/twitter/followings/:id';
-                    }
-                } },
-      { title:"用户喜欢列表",
-        docs:"https://docs.rsshub.app/social-media.html#twitter",
-        source:"/:id",
-        target:(params) => {
-                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
-                        return '/twitter/likes/:id';
-                    }
-                } },
-      { title:"列表时间线",
-        docs:"https://docs.rsshub.app/social-media.html#twitter",
-        source:"/:id/lists/:name",
-        target:(params) => {
-                    if (params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search') {
-                        return '/twitter/list/:id/:name';
-                    }
-                } },
-      { title:"关键词",
-        docs:"https://docs.rsshub.app/social-media.html#twitter",
-        source:"/search",
-        target:(params, url) => `/twitter/keyword/${new URL(url).searchParams.get('q')}` } ] },
   "smzdm.com":{ _name:"什么值得买",
     www:[ { title:"排行榜",
         docs:"https://docs.rsshub.app/shopping.html#shen-me-zhi-de-mai",
@@ -8337,11 +8457,6 @@
         docs:"https://docs.rsshub.app/game.html#steam",
         source:"/search/",
         target:(params, url) => `/steam/search/${new URL(url).searchParams}` } ] },
-  "baijingapp.com":{ _name:"白鲸出海",
-    www:[ { title:"文章",
-        docs:"https://docs.rsshub.app/new-media.html#bai-jing-chu-hai",
-        source:"",
-        target:"/baijing" } ] },
   "xiaomi.cn":{ _name:"小米社区",
     www:[ { title:"圈子",
         docs:"https://docs.rsshub.app/bbs.html#xiao-mi-she-qu",

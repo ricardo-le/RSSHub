@@ -107,6 +107,9 @@
     "/8world/:category?": [
         "nczitzk"
     ],
+    "/91porn/author/:uid/:lang?": [
+        "TonyRL"
+    ],
     "/91porn/:lang?": [
         "TonyRL"
     ],
@@ -263,6 +266,9 @@
     ],
     "/audiobar/latest": [
         "zxzhuty"
+    ],
+    "/baijing/:type?": [
+        "nczitzk"
     ],
     "/bandcamp/tag/:tag?": [
         "nczitzk"
@@ -1181,6 +1187,36 @@
     "/google/sites/recentChanges/:id": [
         "nczitzk"
     ],
+    "/gov/cmse/xwzx/zhxw": [
+        "nczitzk"
+    ],
+    "/gov/cmse/xwzx/yzjz": [
+        "nczitzk"
+    ],
+    "/gov/cmse/gfgg": [
+        "nczitzk"
+    ],
+    "/gov/cmse/fxrw": [
+        "nczitzk"
+    ],
+    "/gov/cmse/kjkx/:id": [
+        "nczitzk"
+    ],
+    "/gov/cmse/gjhz": [
+        "nczitzk"
+    ],
+    "/gov/cmse/hqsy/:id": [
+        "nczitzk"
+    ],
+    "/gov/cmse/ztbd/:id": [
+        "nczitzk"
+    ],
+    "/gov/cmse/kpjy/:id": [
+        "nczitzk"
+    ],
+    "/gov/cmse/:path+": [
+        "nczitzk"
+    ],
     "/gov/customs/list/:gchannel?": [
         "Jeason0228",
         "TonyRL"
@@ -1833,8 +1869,14 @@
     "/learnku/:community/:category?": [
         "kayw-geek"
     ],
-    "/leetcode/dailyquestion/en": [
+    "/leetcode/articles": [
+        "LogicJake"
+    ],
+    "/leetcode/dailyquestion/:lang": [
         "NavePnow"
+    ],
+    "/leetcode/submission/:country/:user": [
+        "NathanDai"
     ],
     "/leiphone/leiphone": [
         "vlcheng"
@@ -2316,7 +2358,7 @@
     "/pianyuan/indexers/pianyuan/results/search/api": [
         "jerry1119"
     ],
-    "/picuki/profile/:id/:displayVideo?": [
+    "/picuki/profile/:id/:functionalFlag?": [
         "hoilc",
         "Rongronggg9"
     ],
@@ -2391,6 +2433,9 @@
         "nczitzk"
     ],
     "/pts/dailynews": [
+        "nczitzk"
+    ],
+    "/pts/live/:id?": [
         "nczitzk"
     ],
     "/pts/opinion": [
@@ -2571,6 +2616,9 @@
     ],
     "/secnews/index": [
         "kaiili"
+    ],
+    "/seekingalpha/:symbol/:category?": [
+        "TonyRL"
     ],
     "/segmentfault/channel/:name": [
         "LogicJake",
@@ -2906,6 +2954,35 @@
     "/trow/portal": [
         "shiningdracon"
     ],
+    "/twitter/collection/:uid/:collectionId/:routeParams?": [
+        "TonyRL"
+    ],
+    "/twitter/followings/:id/:routeParams?": [
+        "DIYgod"
+    ],
+    "/twitter/keyword/:keyword/:routeParams?/:limit?": [
+        "DIYgod",
+        "yindaheng98",
+        "Rongronggg9"
+    ],
+    "/twitter/likes/:id/:routeParams?": [
+        "xyqfer"
+    ],
+    "/twitter/list/:id/:name/:routeParams?": [
+        "xyqfer"
+    ],
+    "/twitter/media/:id/:routeParams?": [
+        "yindaheng98",
+        "Rongronggg9"
+    ],
+    "/twitter/trends/:woeid?": [
+        "sakamossan"
+    ],
+    "/twitter/user/:id/:routeParams?": [
+        "DIYgod",
+        "yindaheng98",
+        "Rongronggg9"
+    ],
     "/twreporter/category/:cid": [
         "emdoe"
     ],
@@ -3046,7 +3123,10 @@
     "/wallpaperhub/": [
         "nczitzk"
     ],
-    "/wallstreetcn/live/:category?": [
+    "/wallstreetcn/hot/:period?": [
+        "nczitzk"
+    ],
+    "/wallstreetcn/live/:category?/:score?": [
         "nczitzk"
     ],
     "/wallstreetcn/news/:category?": [
@@ -3483,13 +3563,6 @@
     "/zcfy/hot": [],
     "/jinritoutiao/keyword/:keyword": [],
     "/disqus/posts/:forum": [],
-    "/twitter/user/:id/:routeParams?": [],
-    "/twitter/list/:id/:name/:routeParams?": [],
-    "/twitter/likes/:id/:routeParams?": [],
-    "/twitter/followings/:id/:routeParams?": [],
-    "/twitter/keyword/:keyword/:routeParams?/:limit?": [],
-    "/twitter/trends/:woeid?": [],
-    "/twitter/media/:id/:routeParams?": [],
     "/geektime/column/:cid": [],
     "/geektime/news": [],
     "/jiemian/list/:cid": [],
@@ -3919,7 +3992,6 @@
     "/aisixiang/column/:id": [],
     "/aisixiang/ranking/:type?/:range?": [],
     "/aisixiang/thinktank/:name/:type?": [],
-    "/leetcode/articles": [],
     "/leetcode/submission/us/:user": [],
     "/leetcode/submission/cn/:user": [],
     "/xiaomieu/releases": [],
@@ -4289,7 +4361,6 @@
     "/yahoo-news/:region/:category?": [],
     "/yahoo-jp-tv/:query": [],
     "/yahoo-author/:author": [],
-    "/baijing": [],
     "/ddrk/update/:name/:season?": [],
     "/ddrk/tag/:tag": [],
     "/ddrk/category/:category": [],
