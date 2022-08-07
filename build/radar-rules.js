@@ -51,6 +51,23 @@
         docs:"https://docs.rsshub.app/bbs.html#19-lou-tou-tiao",
         source:[ "/" ],
         target:"/19lou/jiaxing" } ] },
+  "2cycd.com":{ _name:"二次元虫洞",
+    ".":[ { title:"板块",
+        docs:"https://docs.rsshub.app/bbs.html#er-ci-yuan-chong-dong",
+        source:"/:path",
+        target:(params, url) => {
+                    let pid, sort;
+                    const static_matched = params.path.match(/forum-(\d+)-\d+.html/);
+                    if (static_matched) {
+                        pid = static_matched[1];
+                    } else if (params.path === 'forum.php') {
+                        pid = new URL(url).searchParams.get('fid');
+                        sort = new URL(url).searchParams.get('orderby');
+                    } else {
+                        return false;
+                    }
+                    return `/2cycd/${pid}/${sort ? sort : 'dateline'}`;
+                } } ] },
   "35photo.pro":{ _name:"35PHOTO",
     ".":[ { title:"New photos",
         docs:"https://docs.rsshub.app/picture.html#35photo-new-photos",
@@ -2819,6 +2836,11 @@
         docs:"https://docs.rsshub.app/government.html#guang-dong-sheng-ren-min-zheng-fu-shen-zhen-shi-kao-shi-yuan",
         source:[ "/*" ],
         target:"/gov/shenzhen/zzb/:caty/:page?" } ] },
+  "taiyuan.gov.cn":{ _name:"太原市人民政府",
+    rsj:[ { title:"太原市人力资源和社会保障局政府公开信息",
+        docs:"https://docs.rsshub.app/government.html#tai-yuan-shi-ren-min-zheng-fu-tai-yuan-shi-ren-li-zi-yuan-he-she-hui-bao-zhang-ju-zheng-fu-gong-kai-xin-xi",
+        source:[ "/*" ],
+        target:"/taiyuan/rsj/:caty/:page?" } ] },
   "tqyb.com.cn":{ _name:"广州天气",
     www:[ { title:"突发性天气提示",
         docs:"https://docs.rsshub.app/government.html#guang-zhou-tian-qi-tu-fa-xing-tian-qi-ti-shi",
