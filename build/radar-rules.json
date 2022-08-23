@@ -1253,8 +1253,8 @@
       }
     ]
   },
-  "萌番组 Bangumi Moe": {
-    "_name": "bangumi.moe",
+  "bangumi.moe": {
+    "_name": "萌番組",
     ".": [
       {
         "title": "最新",
@@ -1271,6 +1271,19 @@
           "/search/index"
         ],
         "target": "/bangumi/:tags?"
+      }
+    ]
+  },
+  "bangumi.online": {
+    "_name": "アニメ新番組",
+    ".": [
+      {
+        "title": "當季新番",
+        "docs": "https://docs.rsshub.app/anime.html#アニメ-xin-fan-zu-dang-ji-xin-fan",
+        "source": [
+          "/"
+        ],
+        "target": "/bangumi/online"
       }
     ]
   },
@@ -6302,6 +6315,15 @@
         "target": "/huxiu/article"
       },
       {
+        "title": "24小时",
+        "docs": "https://docs.rsshub.app/new-media.html#hu-xiu",
+        "source": [
+          "/moment",
+          "/"
+        ],
+        "target": "/huxiu/moment"
+      },
+      {
         "title": "标签",
         "docs": "https://docs.rsshub.app/new-media.html#hu-xiu",
         "source": [
@@ -8943,6 +8965,20 @@
       }
     ]
   },
+  "macfilos.com": {
+    "_name": "Macfilos",
+    ".": [
+      {
+        "title": "Blog",
+        "docs": "https://docs.rsshub.app/new-media.html#macfilos-blog",
+        "source": [
+          "/blog",
+          "/"
+        ],
+        "target": "/macfilos/blog"
+      }
+    ]
+  },
   "mcachicago.org": {
     "_name": "MCA Chicago",
     ".": [
@@ -8973,6 +9009,28 @@
           "/department/details",
           "/"
         ]
+      }
+    ]
+  },
+  "meteor.today": {
+    "_name": "Meteor",
+    ".": [
+      {
+        "title": "看板",
+        "docs": "https://docs.rsshub.app/bbs.html#meteor",
+        "source": [
+          "/board/:board",
+          "/board/:board/new"
+        ],
+        "target": "/meteor/board/:board"
+      },
+      {
+        "title": "看板列表",
+        "docs": "https://docs.rsshub.app/bbs.html#meteor",
+        "source": [
+          "/"
+        ],
+        "target": "/meteor/boards"
       }
     ]
   },
